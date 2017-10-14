@@ -9,5 +9,6 @@
 import Foundation
 
 public protocol MapPageModule : class {
-    func doSomething()
+    var followUser : Bool { get set }
+    func start()
 }

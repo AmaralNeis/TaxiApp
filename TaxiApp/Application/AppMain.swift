@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMaps
 
 public final class AppMain {
     
@@ -17,7 +18,12 @@ public final class AppMain {
     }
     
     public func start(with Application:UIApplication, options:[UIApplicationLaunchOptionsKey: Any]?) -> Bool{
+        initialize()
         return createStartScreen()
+    }
+    
+    public func initialize() {
+        GMSServices.provideAPIKey(AppConfig.googleMapsKey)
     }
     
     private func createStartScreen() -> Bool {

@@ -9,9 +9,10 @@
 import Foundation
 
 public protocol MapPageInput : class {
-    func get(something:String)
+    func startLocation()
+    func stopLocation()
 }
 
 public protocol MapPageOutput : class {
-    func fetch(something:String)
+    func fetchUserLocation(coordinate:Coordinate)
 }

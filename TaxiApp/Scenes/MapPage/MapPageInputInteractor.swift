@@ -7,10 +7,13 @@
 //
 
 import Foundation
+import CoreLocation
 
-public class MapPageInputInteractor : MapPageInput {
+public class MapPageInputInteractor : NSObject {
     
-    fileprivate weak var output : MapPageOutput?
+    private(set) public weak var output     : MapPageOutput?
+    
+    private(set) public var locationManager = CLLocationManager()
     
     public func inject(output:MapPageOutput?) {
         self.output = output
@@ -19,10 +22,35 @@ public class MapPageInputInteractor : MapPageInput {
     private func assertDependencies() {
    		assert(output != nil, "Did not set output to the input interactor")
     }
-    
-    public func get(something:String) {
-        assertDependencies()
-        //Implement how to get data here
-    }
+}
 
+extension MapPageInputInteractor : MapPageInput {
+    public func startLocation() {
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+            locationManager.requestLocation()
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    public func stopLocation() {
+        locationManager.stopUpdatingLocation()
+    }
+}
+
+// MARK: - Location Manager Delegate
+extension MapPageInputInteractor : CLLocationManagerDelegate {
+    public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let lastLocation = locations.last {
+            let coordinate = Coordinate(coordinate: lastLocation.coordinate)
+            output?.fetchUserLocation(coordinate: coordinate)
+        }
+    }
+    
+    public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Falha")
+    }
 }

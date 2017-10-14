@@ -9,5 +9,7 @@
 import UIKit
 
 public protocol MapPageView : class {
-    func show(something:String)
+    func plotNewMap(coordinate:Coordinate, zoom:Double)
+    func updateMapLocation(coordinate:Coordinate, zoom:Double)
+    func setUserPin(coordinate:Coordinate)
 }

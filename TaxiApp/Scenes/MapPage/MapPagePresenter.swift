@@ -8,13 +8,19 @@
 
 import Foundation
 
-public class MapPagePresenter {
+public class MapPagePresenter : NSObject {
     
-    fileprivate weak var view   : MapPageView?
-    fileprivate var interactor  : MapPageInput?
-    fileprivate var router      : MapPageWireframe?
+    private(set) public weak var view           : MapPageView?
+    private(set) public var interactor          : MapPageInput?
+    private(set) public var router              : MapPageWireframe?
     
-    public init() {}
+    public var followUser                       : Bool = true
+    private(set) public var currentLocation     : Coordinate = Coordinate(latitude: 0, longitude: 0)
+    private(set) public var zoom                : Double = 17.0
+        
+    public override init() {
+        super.init()
+    }
     
     public func inject(view: MapPageView?, interactor:MapPageInput?, router:MapPageWireframe?) {
         self.view = view
@@ -27,22 +33,26 @@ public class MapPagePresenter {
         assert(interactor != nil, "No interactor defined in presenter")
         assert(router != nil, "No router defined in presenter")
     }
-    
 }
 
 // MARK: - Presenter Delegates
 extension MapPagePresenter : MapPageModule {
-    public func doSomething() {
+    public func start() {
         assertDependencies()
-        //Implements presenter actions here
+        view?.plotNewMap(coordinate: currentLocation, zoom: zoom)
+        interactor?.startLocation()
     }
-
 }
 
 // MARK: - Output Interactor Delegate
 extension MapPagePresenter : MapPageOutput {
-    public func fetch(something: String) {
-        assertDependencies()
-        //Handle fetched data here
+    public func fetchUserLocation(coordinate:Coordinate) {
+        currentLocation = coordinate
+        view?.setUserPin(coordinate:currentLocation)
+        
+        if followUser {
+            view?.updateMapLocation(coordinate:currentLocation, zoom: self.zoom)
+        }
     }
 }
+

@@ -14,6 +14,9 @@
 		915A01221F8FAC1B0073838F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 915A01201F8FAC1B0073838F /* LaunchScreen.storyboard */; };
 		915A012D1F8FAC1B0073838F /* TaxiAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915A012C1F8FAC1B0073838F /* TaxiAppTests.swift */; };
 		915A01381F8FAC1B0073838F /* TaxiAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915A01371F8FAC1B0073838F /* TaxiAppUITests.swift */; };
+		91960E2E1F92794500B8A152 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91960E2D1F92794500B8A152 /* AppConfig.swift */; };
+		91960E331F92BE7D00B8A152 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91960E321F92BE7D00B8A152 /* Coordinate.swift */; };
+		91960E381F92D1E700B8A152 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91960E371F92D1E700B8A152 /* Driver.swift */; };
 		919D7CBB1F9245B20009B18F /* MapPageModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919D7CB71F9245B20009B18F /* MapPageModule.swift */; };
 		919D7CBC1F9245B20009B18F /* MapPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919D7CB81F9245B20009B18F /* MapPageInteractor.swift */; };
 		919D7CBD1F9245B20009B18F /* MapPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919D7CB91F9245B20009B18F /* MapPageView.swift */; };
@@ -64,6 +67,9 @@
 		915A01331F8FAC1B0073838F /* TaxiAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaxiAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		915A01371F8FAC1B0073838F /* TaxiAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiAppUITests.swift; sourceTree = "<group>"; };
 		915A01391F8FAC1B0073838F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91960E2D1F92794500B8A152 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		91960E321F92BE7D00B8A152 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		91960E371F92D1E700B8A152 /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
 		919D7CB71F9245B20009B18F /* MapPageModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPageModule.swift; sourceTree = "<group>"; };
 		919D7CB81F9245B20009B18F /* MapPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPageInteractor.swift; sourceTree = "<group>"; };
 		919D7CB91F9245B20009B18F /* MapPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPageView.swift; sourceTree = "<group>"; };
@@ -185,6 +191,15 @@
 			path = TaxiAppUITests;
 			sourceTree = "<group>";
 		};
+		91960E311F92BE5B00B8A152 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				91960E321F92BE7D00B8A152 /* Coordinate.swift */,
+				91960E371F92D1E700B8A152 /* Driver.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		919D7CAA1F9244F40009B18F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +211,7 @@
 		919D7CAB1F9244FD0009B18F /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				91960E311F92BE5B00B8A152 /* Models */,
 				919D7CCF1F924B6B0009B18F /* Errors */,
 			);
 			path = Common;
@@ -218,9 +234,9 @@
 		919D7CB61F9245960009B18F /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
+				919D7CB91F9245B20009B18F /* MapPageView.swift */,
 				919D7CB71F9245B20009B18F /* MapPageModule.swift */,
 				919D7CB81F9245B20009B18F /* MapPageInteractor.swift */,
-				919D7CB91F9245B20009B18F /* MapPageView.swift */,
 				919D7CBA1F9245B20009B18F /* MapPageWireframe.swift */,
 			);
 			path = Interfaces;
@@ -247,6 +263,7 @@
 			children = (
 				915A01171F8FAC1B0073838F /* AppDelegate.swift */,
 				919D7CD31F9254A90009B18F /* AppMain.swift */,
+				91960E2D1F92794500B8A152 /* AppConfig.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -329,6 +346,11 @@
 					915A01131F8FAC1B0073838F = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					915A01271F8FAC1B0073838F = {
 						CreatedOnToolsVersion = 9.0;
@@ -544,6 +566,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91960E381F92D1E700B8A152 /* Driver.swift in Sources */,
 				919D7CC81F9245C10009B18F /* MapPageConfigurator.swift in Sources */,
 				919D7CC61F9245C10009B18F /* MapPageViewController.swift in Sources */,
 				919D7CC41F9245C10009B18F /* MapPagePresenter.swift in Sources */,
@@ -553,7 +576,9 @@
 				915A01181F8FAC1B0073838F /* AppDelegate.swift in Sources */,
 				919D7CBD1F9245B20009B18F /* MapPageView.swift in Sources */,
 				919D7CBE1F9245B20009B18F /* MapPageWireframe.swift in Sources */,
+				91960E331F92BE7D00B8A152 /* Coordinate.swift in Sources */,
 				919D7CBB1F9245B20009B18F /* MapPageModule.swift in Sources */,
+				91960E2E1F92794500B8A152 /* AppConfig.swift in Sources */,
 				919D7CD41F9254A90009B18F /* AppMain.swift in Sources */,
 				919D7CD11F924B790009B18F /* ConfiguratorError.swift in Sources */,
 			);
