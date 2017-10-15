@@ -10,7 +10,7 @@ import Foundation
 
 public struct DriversService : Gettable {
     
-    public typealias DataType = Driver
+    public typealias DataType = Drivers
     
     public let longitude    : Double
     public let latitude     : Double
@@ -29,8 +29,8 @@ public struct DriversService : Gettable {
                     completion(RequestResult<DataType>.fail(code, err), headers)
                 
                 case .success(let code, let json):
-                    let user = Driver(jsonString: json ?? "") ?? Driver()
-                    completion(RequestResult<DataType>.success(code, user), headers)
+                    let drivers = Drivers(jsonString: json ?? "")
+                    completion(RequestResult<DataType>.success(code, drivers ?? Drivers()), headers)
             }
         }
     }

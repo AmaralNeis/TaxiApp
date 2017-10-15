@@ -26,7 +26,16 @@ public class MapPageInputInteractor : NSObject {
 
 extension MapPageInputInteractor : MapPageInput {
     public func getDrivers(at coordinate: Coordinate) {
-        
+        NSLog("REquesting new Cars to: \(coordinate)")
+        let service = DriversService(longitude: coordinate.longitude, latitude: coordinate.latitude)
+        service.get { [weak self] (result, _) in
+            switch(result) {
+                case .success(_, let drivers):
+                    self?.output?.fetchDrivers(drivers.taxis)
+                case .fail:
+                    break
+            }
+        }
     }
     
     public func startLocation() {
@@ -42,6 +51,13 @@ extension MapPageInputInteractor : MapPageInput {
     
     public func stopLocation() {
         locationManager.stopUpdatingLocation()
+    }
+}
+
+// MARK: - Helpers
+extension MapPageInputInteractor {
+    func handleResult(drivers:[Driver]) {
+        output?.fetchDrivers(drivers)
     }
 }
 

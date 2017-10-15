@@ -11,4 +11,5 @@ import Foundation
 public protocol MapPageModule : class {
     func start()
     func getCurrentLocation()
+    func getDriverAt(coordinate:Coordinate)
 }

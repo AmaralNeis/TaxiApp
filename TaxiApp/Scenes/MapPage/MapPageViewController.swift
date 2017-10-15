@@ -54,7 +54,6 @@ class MapPageViewController: UIViewController {
         setupShadowView()
         setupInfoLocationView()
 	}
-
 }
 
 // MARK: - View Delegate
@@ -108,6 +107,8 @@ extension MapPageViewController {
             guard let latitude = driver.latitude, let longitude = driver.longitude else { continue }
             let position = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
             let newDriver = GMSMarker(position: position)
+            newDriver.icon = GMSMarker.markerImage(with: .black)
+            newDriver.map = self.mapView
             self.drivers.append(newDriver)
         }
     }
@@ -142,6 +143,8 @@ extension MapPageViewController {
 extension MapPageViewController : GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
         print(position.target.latitude, position.target.longitude)
+        let coordinate = Coordinate(latitude: position.target.latitude, longitude: position.target.longitude)
+        presenter?.getDriverAt(coordinate: coordinate)
     }
 }
 

@@ -14,6 +14,8 @@
 		915A01221F8FAC1B0073838F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 915A01201F8FAC1B0073838F /* LaunchScreen.storyboard */; };
 		915A01381F8FAC1B0073838F /* TaxiAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915A01371F8FAC1B0073838F /* TaxiAppUITests.swift */; };
 		916301CD1F93952A005C8E83 /* MapLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916301CC1F93952A005C8E83 /* MapLocationView.swift */; };
+		916301D21F93ADC3005C8E83 /* Trigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916301D11F93ADC3005C8E83 /* Trigger.swift */; };
+		916301D41F93B67A005C8E83 /* Drivers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916301D31F93B67A005C8E83 /* Drivers.swift */; };
 		91960E2E1F92794500B8A152 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91960E2D1F92794500B8A152 /* AppConfig.swift */; };
 		91960E331F92BE7D00B8A152 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91960E321F92BE7D00B8A152 /* Coordinate.swift */; };
 		91960E381F92D1E700B8A152 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91960E371F92D1E700B8A152 /* Driver.swift */; };
@@ -77,6 +79,8 @@
 		915A01371F8FAC1B0073838F /* TaxiAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiAppUITests.swift; sourceTree = "<group>"; };
 		915A01391F8FAC1B0073838F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		916301CC1F93952A005C8E83 /* MapLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocationView.swift; sourceTree = "<group>"; };
+		916301D11F93ADC3005C8E83 /* Trigger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trigger.swift; sourceTree = "<group>"; };
+		916301D31F93B67A005C8E83 /* Drivers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drivers.swift; sourceTree = "<group>"; };
 		91960E2D1F92794500B8A152 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		91960E321F92BE7D00B8A152 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		91960E371F92D1E700B8A152 /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 		916301CE1F939EBE005C8E83 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				916301D11F93ADC3005C8E83 /* Trigger.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 			children = (
 				91960E321F92BE7D00B8A152 /* Coordinate.swift */,
 				91960E371F92D1E700B8A152 /* Driver.swift */,
+				916301D31F93B67A005C8E83 /* Drivers.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -655,6 +661,7 @@
 				91FFFC681F93621500D58203 /* RequestMethod.swift in Sources */,
 				91FFFC6E1F93624800D58203 /* Dictionary+UrlEncoder.swift in Sources */,
 				91FFFC6A1F93621500D58203 /* RequestEncoding.swift in Sources */,
+				916301D41F93B67A005C8E83 /* Drivers.swift in Sources */,
 				91FFFC6C1F93621500D58203 /* WebService.swift in Sources */,
 				915A01181F8FAC1B0073838F /* AppDelegate.swift in Sources */,
 				91FFFC6B1F93621500D58203 /* RequestResult.swift in Sources */,
@@ -666,6 +673,7 @@
 				91960E411F92D41800B8A152 /* Mappable.swift in Sources */,
 				919D7CBB1F9245B20009B18F /* MapPageModule.swift in Sources */,
 				91FFFC731F93633500D58203 /* DriversEndpoint.swift in Sources */,
+				916301D21F93ADC3005C8E83 /* Trigger.swift in Sources */,
 				91960E2E1F92794500B8A152 /* AppConfig.swift in Sources */,
 				919D7CD41F9254A90009B18F /* AppMain.swift in Sources */,
 				916301CD1F93952A005C8E83 /* MapLocationView.swift in Sources */,
