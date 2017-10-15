@@ -14,12 +14,14 @@ public class MapPagePresenter : NSObject {
     private(set) public var interactor          : MapPageInput?
     private(set) public var router              : MapPageWireframe?
     
-    public var followUser                       : Bool = true
+    private var followUser                       : Bool = true
     private(set) public var currentLocation     : Coordinate = Coordinate(latitude: 0, longitude: 0)
-    private(set) public var zoom                : Double = 17.0
+    private(set) public var zoom                : Double = 0.0
+    private let defaultZoom                     : Double = 17.0
         
     public override init() {
         super.init()
+        zoom = defaultZoom
     }
     
     public func inject(view: MapPageView?, interactor:MapPageInput?, router:MapPageWireframe?) {
@@ -42,15 +44,26 @@ extension MapPagePresenter : MapPageModule {
         view?.plotNewMap(coordinate: currentLocation, zoom: zoom)
         interactor?.startLocation()
     }
+    
+    public func getCurrentLocation() {
+        assertDependencies()
+        zoom = (zoom > defaultZoom) ? zoom : defaultZoom
+        view?.updateMapLocation(coordinate: self.currentLocation, zoom: zoom)
+    }
 }
 
 // MARK: - Output Interactor Delegate
 extension MapPagePresenter : MapPageOutput {
+    public func fetchDrivers(_ drivers: [Driver]) {
+        
+    }
+    
     public func fetchUserLocation(coordinate:Coordinate) {
         currentLocation = coordinate
-        view?.setUserPin(coordinate:currentLocation)
+        view?.setPin(user: coordinate)
         
         if followUser {
+            followUser = false
             view?.updateMapLocation(coordinate:currentLocation, zoom: self.zoom)
         }
     }

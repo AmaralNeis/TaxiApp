@@ -25,6 +25,10 @@ public class MapPageInputInteractor : NSObject {
 }
 
 extension MapPageInputInteractor : MapPageInput {
+    public func getDrivers(at coordinate: Coordinate) {
+        
+    }
+    
     public func startLocation() {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()

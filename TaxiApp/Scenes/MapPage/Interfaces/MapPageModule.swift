@@ -9,6 +9,6 @@
 import Foundation
 
 public protocol MapPageModule : class {
-    var followUser : Bool { get set }
     func start()
+    func getCurrentLocation()
 }

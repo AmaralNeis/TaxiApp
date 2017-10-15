@@ -12,5 +12,5 @@ public struct AppConfig {
     private init() {}
     
     static let googleMapsKey    = "AIzaSyDZ8lQswlbFKE6-rXpad4vehciCdK0GDig"
-    static let apiURL           = "https://quasinada-ryu.easytaxi.net.br"
+    static let apiURL           = "https://quasinada-ryu.easytaxi.net.br/api"
 }

@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-public struct Coordinate {
+public struct Coordinate : Mappable {
     public let latitude    : Double
     public let longitude   : Double
     

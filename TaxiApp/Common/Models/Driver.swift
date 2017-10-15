@@ -8,8 +8,16 @@
 
 import Foundation
 
-struct Driver {
+public struct Driver : Mappable {
     var driverName  : String?
     var driverCar   : String?
-    var coordinate  : Coordinate?
+    var latitude    : Double?
+    var longitude   : Double?
+
+    enum CodingKeys : String, CodingKey {
+        case driverName     = "driver-name"
+        case driverCar      = "driver-car"
+        case latitude       = "lat"
+        case longitude      = "lng"
+    }
 }

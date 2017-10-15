@@ -11,8 +11,10 @@ import Foundation
 public protocol MapPageInput : class {
     func startLocation()
     func stopLocation()
+    func getDrivers(at coordinate:Coordinate)
 }
 
 public protocol MapPageOutput : class {
     func fetchUserLocation(coordinate:Coordinate)
+    func fetchDrivers(_ drivers:[Driver])
 }

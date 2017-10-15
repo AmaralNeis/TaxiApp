@@ -12,11 +12,12 @@
 		915A01181F8FAC1B0073838F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915A01171F8FAC1B0073838F /* AppDelegate.swift */; };
 		915A011F1F8FAC1B0073838F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 915A011E1F8FAC1B0073838F /* Assets.xcassets */; };
 		915A01221F8FAC1B0073838F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 915A01201F8FAC1B0073838F /* LaunchScreen.storyboard */; };
-		915A012D1F8FAC1B0073838F /* TaxiAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915A012C1F8FAC1B0073838F /* TaxiAppTests.swift */; };
 		915A01381F8FAC1B0073838F /* TaxiAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915A01371F8FAC1B0073838F /* TaxiAppUITests.swift */; };
+		916301CD1F93952A005C8E83 /* MapLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916301CC1F93952A005C8E83 /* MapLocationView.swift */; };
 		91960E2E1F92794500B8A152 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91960E2D1F92794500B8A152 /* AppConfig.swift */; };
 		91960E331F92BE7D00B8A152 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91960E321F92BE7D00B8A152 /* Coordinate.swift */; };
 		91960E381F92D1E700B8A152 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91960E371F92D1E700B8A152 /* Driver.swift */; };
+		91960E411F92D41800B8A152 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91960E401F92D41800B8A152 /* Mappable.swift */; };
 		919D7CBB1F9245B20009B18F /* MapPageModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919D7CB71F9245B20009B18F /* MapPageModule.swift */; };
 		919D7CBC1F9245B20009B18F /* MapPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919D7CB81F9245B20009B18F /* MapPageInteractor.swift */; };
 		919D7CBD1F9245B20009B18F /* MapPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919D7CB91F9245B20009B18F /* MapPageView.swift */; };
@@ -29,6 +30,15 @@
 		919D7CCB1F9246C20009B18F /* MapPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 919D7CCA1F9246C20009B18F /* MapPageViewController.xib */; };
 		919D7CD11F924B790009B18F /* ConfiguratorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919D7CD01F924B790009B18F /* ConfiguratorError.swift */; };
 		919D7CD41F9254A90009B18F /* AppMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919D7CD31F9254A90009B18F /* AppMain.swift */; };
+		91FFFC681F93621500D58203 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FFFC631F93621400D58203 /* RequestMethod.swift */; };
+		91FFFC691F93621500D58203 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FFFC641F93621500D58203 /* Endpoint.swift */; };
+		91FFFC6A1F93621500D58203 /* RequestEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FFFC651F93621500D58203 /* RequestEncoding.swift */; };
+		91FFFC6B1F93621500D58203 /* RequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FFFC661F93621500D58203 /* RequestResult.swift */; };
+		91FFFC6C1F93621500D58203 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FFFC671F93621500D58203 /* WebService.swift */; };
+		91FFFC6E1F93624800D58203 /* Dictionary+UrlEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FFFC6D1F93624800D58203 /* Dictionary+UrlEncoder.swift */; };
+		91FFFC731F93633500D58203 /* DriversEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FFFC721F93633500D58203 /* DriversEndpoint.swift */; };
+		91FFFC751F936A1800D58203 /* DriversService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FFFC741F936A1800D58203 /* DriversService.swift */; };
+		91FFFC771F936A3700D58203 /* Gettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FFFC761F936A3700D58203 /* Gettable.swift */; };
 		B7A4F187E90EB6E881426BBA /* Pods_TaxiAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8444898FA2CA3560AB8C9B3 /* Pods_TaxiAppUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,14 +72,15 @@
 		915A01211F8FAC1B0073838F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		915A01231F8FAC1B0073838F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		915A01281F8FAC1B0073838F /* TaxiAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaxiAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		915A012C1F8FAC1B0073838F /* TaxiAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiAppTests.swift; sourceTree = "<group>"; };
 		915A012E1F8FAC1B0073838F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		915A01331F8FAC1B0073838F /* TaxiAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaxiAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		915A01371F8FAC1B0073838F /* TaxiAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiAppUITests.swift; sourceTree = "<group>"; };
 		915A01391F8FAC1B0073838F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		916301CC1F93952A005C8E83 /* MapLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocationView.swift; sourceTree = "<group>"; };
 		91960E2D1F92794500B8A152 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		91960E321F92BE7D00B8A152 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		91960E371F92D1E700B8A152 /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
+		91960E401F92D41800B8A152 /* Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
 		919D7CB71F9245B20009B18F /* MapPageModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPageModule.swift; sourceTree = "<group>"; };
 		919D7CB81F9245B20009B18F /* MapPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPageInteractor.swift; sourceTree = "<group>"; };
 		919D7CB91F9245B20009B18F /* MapPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPageView.swift; sourceTree = "<group>"; };
@@ -82,6 +93,15 @@
 		919D7CCA1F9246C20009B18F /* MapPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapPageViewController.xib; sourceTree = "<group>"; };
 		919D7CD01F924B790009B18F /* ConfiguratorError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguratorError.swift; sourceTree = "<group>"; };
 		919D7CD31F9254A90009B18F /* AppMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMain.swift; sourceTree = "<group>"; };
+		91FFFC631F93621400D58203 /* RequestMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
+		91FFFC641F93621500D58203 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		91FFFC651F93621500D58203 /* RequestEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestEncoding.swift; sourceTree = "<group>"; };
+		91FFFC661F93621500D58203 /* RequestResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestResult.swift; sourceTree = "<group>"; };
+		91FFFC671F93621500D58203 /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		91FFFC6D1F93624800D58203 /* Dictionary+UrlEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+UrlEncoder.swift"; sourceTree = "<group>"; };
+		91FFFC721F93633500D58203 /* DriversEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversEndpoint.swift; sourceTree = "<group>"; };
+		91FFFC741F936A1800D58203 /* DriversService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversService.swift; sourceTree = "<group>"; };
+		91FFFC761F936A3700D58203 /* Gettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gettable.swift; sourceTree = "<group>"; };
 		93A40FBF35AD52AFE77C670B /* Pods-TaxiApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TaxiApp/Pods-TaxiApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C8444898FA2CA3560AB8C9B3 /* Pods_TaxiAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaxiAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E244A437CCD16DB2233A7CB2 /* Pods-TaxiAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TaxiAppTests/Pods-TaxiAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -176,7 +196,6 @@
 		915A012B1F8FAC1B0073838F /* TaxiAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				915A012C1F8FAC1B0073838F /* TaxiAppTests.swift */,
 				915A012E1F8FAC1B0073838F /* Info.plist */,
 			);
 			path = TaxiAppTests;
@@ -191,6 +210,13 @@
 			path = TaxiAppUITests;
 			sourceTree = "<group>";
 		};
+		916301CE1F939EBE005C8E83 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		91960E311F92BE5B00B8A152 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +224,15 @@
 				91960E371F92D1E700B8A152 /* Driver.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		91960E3F1F92D3D300B8A152 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				91FFFC761F936A3700D58203 /* Gettable.swift */,
+				91960E401F92D41800B8A152 /* Mappable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		919D7CAA1F9244F40009B18F /* Scenes */ = {
@@ -211,8 +246,11 @@
 		919D7CAB1F9244FD0009B18F /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				91960E311F92BE5B00B8A152 /* Models */,
 				919D7CCF1F924B6B0009B18F /* Errors */,
+				916301CE1F939EBE005C8E83 /* Helpers */,
+				91960E311F92BE5B00B8A152 /* Models */,
+				91FFFC611F935AFA00D58203 /* Networking */,
+				91960E3F1F92D3D300B8A152 /* Protocols */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -246,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				919D7CCA1F9246C20009B18F /* MapPageViewController.xib */,
+				916301CC1F93952A005C8E83 /* MapLocationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -266,6 +305,45 @@
 				91960E2D1F92794500B8A152 /* AppConfig.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		91FFFC611F935AFA00D58203 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				91FFFC711F93631A00D58203 /* Service */,
+				91FFFC701F93630B00D58203 /* Endpoint */,
+				91FFFC621F935B4C00D58203 /* WebService */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		91FFFC621F935B4C00D58203 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				91FFFC6D1F93624800D58203 /* Dictionary+UrlEncoder.swift */,
+				91FFFC641F93621500D58203 /* Endpoint.swift */,
+				91FFFC651F93621500D58203 /* RequestEncoding.swift */,
+				91FFFC631F93621400D58203 /* RequestMethod.swift */,
+				91FFFC661F93621500D58203 /* RequestResult.swift */,
+				91FFFC671F93621500D58203 /* WebService.swift */,
+			);
+			path = WebService;
+			sourceTree = "<group>";
+		};
+		91FFFC701F93630B00D58203 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				91FFFC721F93633500D58203 /* DriversEndpoint.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		91FFFC711F93631A00D58203 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				91FFFC741F936A1800D58203 /* DriversService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -569,17 +647,28 @@
 				91960E381F92D1E700B8A152 /* Driver.swift in Sources */,
 				919D7CC81F9245C10009B18F /* MapPageConfigurator.swift in Sources */,
 				919D7CC61F9245C10009B18F /* MapPageViewController.swift in Sources */,
+				91FFFC771F936A3700D58203 /* Gettable.swift in Sources */,
 				919D7CC41F9245C10009B18F /* MapPagePresenter.swift in Sources */,
 				919D7CC51F9245C10009B18F /* MapPageRouter.swift in Sources */,
 				919D7CBC1F9245B20009B18F /* MapPageInteractor.swift in Sources */,
 				919D7CC71F9245C10009B18F /* MapPageInputInteractor.swift in Sources */,
+				91FFFC681F93621500D58203 /* RequestMethod.swift in Sources */,
+				91FFFC6E1F93624800D58203 /* Dictionary+UrlEncoder.swift in Sources */,
+				91FFFC6A1F93621500D58203 /* RequestEncoding.swift in Sources */,
+				91FFFC6C1F93621500D58203 /* WebService.swift in Sources */,
 				915A01181F8FAC1B0073838F /* AppDelegate.swift in Sources */,
+				91FFFC6B1F93621500D58203 /* RequestResult.swift in Sources */,
 				919D7CBD1F9245B20009B18F /* MapPageView.swift in Sources */,
+				91FFFC691F93621500D58203 /* Endpoint.swift in Sources */,
+				91FFFC751F936A1800D58203 /* DriversService.swift in Sources */,
 				919D7CBE1F9245B20009B18F /* MapPageWireframe.swift in Sources */,
 				91960E331F92BE7D00B8A152 /* Coordinate.swift in Sources */,
+				91960E411F92D41800B8A152 /* Mappable.swift in Sources */,
 				919D7CBB1F9245B20009B18F /* MapPageModule.swift in Sources */,
+				91FFFC731F93633500D58203 /* DriversEndpoint.swift in Sources */,
 				91960E2E1F92794500B8A152 /* AppConfig.swift in Sources */,
 				919D7CD41F9254A90009B18F /* AppMain.swift in Sources */,
+				916301CD1F93952A005C8E83 /* MapLocationView.swift in Sources */,
 				919D7CD11F924B790009B18F /* ConfiguratorError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -588,7 +677,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				915A012D1F8FAC1B0073838F /* TaxiAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,6 +830,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SD6HQTT68J;
 				INFOPLIST_FILE = TaxiApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = exe.dede.TaxiApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -758,6 +847,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SD6HQTT68J;
 				INFOPLIST_FILE = TaxiApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = exe.dede.TaxiApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
