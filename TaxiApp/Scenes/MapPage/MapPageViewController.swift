@@ -15,7 +15,7 @@ class MapPageViewController: UIViewController {
     @IBOutlet weak var shadowView       : UIView!
     @IBOutlet weak var infoLocationView : MapLocationView!
     
-    private var userPin     : GMSMarker!
+    private var devicePin     : GMSMarker!
     private var locationPin : GMSMarker!
     private var drivers     : [GMSMarker] = []
     private var mapView     : GMSMapView!
@@ -77,7 +77,7 @@ extension MapPageViewController : MapPageView {
         }
     }
     
-    func setPin(user coordinate:Coordinate) {
+    func setPin(device coordinate:Coordinate) {
         assertDependencies()
         DispatchQueue.main.async { [unowned self] in
             self.showUserPin(coordinate: coordinate)
@@ -119,16 +119,16 @@ extension MapPageViewController {
     }
     
     func showUserPin(coordinate:Coordinate) {
-        if self.userPin == nil { self.userPin = GMSMarker() }
-        self.userPin.position   = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
-        self.userPin.title      = "Me"
-        self.userPin.map        = self.mapView
+        if self.devicePin == nil { self.devicePin = GMSMarker() }
+        self.devicePin.position   = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        self.devicePin.title      = "Me"
+        self.devicePin.map        = self.mapView
     }
     
     func showLocationPin(coordinate:Coordinate) {
         if self.locationPin == nil { self.locationPin = GMSMarker() }
         self.locationPin.position   = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
-        self.userPin.map            = self.mapView
+        self.devicePin.map            = self.mapView
     }
     
     func setMapLocation(coordinate:Coordinate, zoom:Double) {

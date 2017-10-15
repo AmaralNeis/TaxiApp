@@ -11,7 +11,7 @@ import UIKit
 public protocol MapPageView : class {
     func plotNewMap(coordinate:Coordinate, zoom:Double)
     func updateMapLocation(coordinate:Coordinate, zoom:Double)
-    func setPin(user coordinate:Coordinate)
+    func setPin(device coordinate:Coordinate)
     func setPin(location coordinate:Coordinate)
     func setPins(drivers: [Driver])
 }

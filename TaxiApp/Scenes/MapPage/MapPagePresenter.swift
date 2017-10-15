@@ -15,7 +15,7 @@ public class MapPagePresenter : NSObject {
     private(set) public var router              : MapPageWireframe?
     
     private var followUser                      : Bool = true
-    private(set) public var currentLocation     : Coordinate = Coordinate(latitude: 0, longitude: 0)
+    private(set) public var deviceLocation      : Coordinate = Coordinate(latitude: 0, longitude: 0)
     private(set) public var cameraLocation      : Coordinate = Coordinate(latitude: 0, longitude: 0)
     private(set) public var zoom                : Double = 0.0
     private let defaultZoom                     : Double = 17.0
@@ -54,14 +54,14 @@ extension MapPagePresenter : MapPageModule {
     public func start() {
         assertDependencies()
         setupTrigger()
-        view?.plotNewMap(coordinate: currentLocation, zoom: zoom)
+        view?.plotNewMap(coordinate: deviceLocation, zoom: zoom)
         interactor?.startLocation()
     }
     
     public func getCurrentLocation() {
         assertDependencies()
         zoom = (zoom > defaultZoom) ? zoom : defaultZoom
-        view?.updateMapLocation(coordinate: self.currentLocation, zoom: zoom)
+        view?.updateMapLocation(coordinate: self.deviceLocation, zoom: zoom)
     }
     
     public func getDriverAt(coordinate: Coordinate) {
@@ -91,12 +91,12 @@ extension MapPagePresenter : MapPageOutput {
     }
     
     public func fetchUserLocation(coordinate:Coordinate) {
-        currentLocation = coordinate
-        view?.setPin(user: coordinate)
+        deviceLocation = coordinate
+        view?.setPin(device: coordinate)
         
         if followUser {
             followUser = false
-            view?.updateMapLocation(coordinate:currentLocation, zoom: self.zoom)
+            view?.updateMapLocation(coordinate:deviceLocation, zoom: self.zoom)
         }
     }
 }
