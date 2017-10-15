@@ -13,11 +13,17 @@ public struct Driver : Mappable {
     var driverCar   : String?
     var latitude    : Double?
     var longitude   : Double?
+    var nearest     : Bool = false
 
+    var coordinate  : Coordinate {
+        return Coordinate(latitude: self.latitude ?? 0, longitude: self.longitude ?? 0)
+    }
+    
     enum CodingKeys : String, CodingKey {
         case driverName     = "driver-name"
         case driverCar      = "driver-car"
         case latitude       = "lat"
         case longitude      = "lng"
     }
+    
 }

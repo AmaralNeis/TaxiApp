@@ -103,11 +103,16 @@ extension MapPageViewController {
     }
     
     func showDrivers(_ drivers:[Driver]) {
-        for driver in drivers {
+        for (index, driver) in drivers.enumerated() {
             guard let latitude = driver.latitude, let longitude = driver.longitude else { continue }
             let position = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
             let newDriver = GMSMarker(position: position)
             newDriver.icon = GMSMarker.markerImage(with: .black)
+            
+            if index == 0 {
+                newDriver.icon = GMSMarker.markerImage(with: .yellow)
+            }
+            
             newDriver.map = self.mapView
             self.drivers.append(newDriver)
         }
@@ -145,6 +150,7 @@ extension MapPageViewController : GMSMapViewDelegate {
         print(position.target.latitude, position.target.longitude)
         let coordinate = Coordinate(latitude: position.target.latitude, longitude: position.target.longitude)
         presenter?.getDriverAt(coordinate: coordinate)
+        presenter?.defineZoom(Double(position.zoom))
     }
 }
 

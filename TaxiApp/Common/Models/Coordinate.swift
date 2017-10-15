@@ -13,6 +13,16 @@ public struct Coordinate : Mappable {
     public let latitude    : Double
     public let longitude   : Double
     
+    var location : CLLocation {
+        let location = CLLocation(latitude: self.latitude, longitude:self.longitude )
+        return location
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case latitude
+        case longitude
+    }
+    
     public init(latitude:Double, longitude:Double) {
         self.latitude   = latitude
         self.longitude  = longitude
@@ -22,5 +32,6 @@ public struct Coordinate : Mappable {
         self.latitude   = coordinate.latitude
         self.longitude  = coordinate.longitude
     }
+
 }
 

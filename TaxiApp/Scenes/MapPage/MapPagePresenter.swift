@@ -69,12 +69,25 @@ extension MapPagePresenter : MapPageModule {
         cameraLocation = coordinate
         trigger.execute()
     }
+    
+    public func defineZoom(_ zoom: Double) {
+        self.zoom = zoom
+    }
 }
 
 // MARK: - Output Interactor Delegate
 extension MapPagePresenter : MapPageOutput {
     public func fetchDrivers(_ drivers: [Driver]) {
-        view?.setPins(drivers: drivers)
+        let userLocation = cameraLocation
+        var orderedDrivers = drivers.sorted { first, second  in
+            userLocation.location.distance(from: first.coordinate.location) < userLocation.location.distance(from: second.coordinate.location)
+        }
+        
+        if orderedDrivers.count > 0 {
+            orderedDrivers[0].nearest = true
+        }
+        
+        view?.setPins(drivers: orderedDrivers)
     }
     
     public func fetchUserLocation(coordinate:Coordinate) {

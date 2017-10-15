@@ -32,6 +32,7 @@
 		919D7CCB1F9246C20009B18F /* MapPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 919D7CCA1F9246C20009B18F /* MapPageViewController.xib */; };
 		919D7CD11F924B790009B18F /* ConfiguratorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919D7CD01F924B790009B18F /* ConfiguratorError.swift */; };
 		919D7CD41F9254A90009B18F /* AppMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919D7CD31F9254A90009B18F /* AppMain.swift */; };
+		91CEE9871F93E18E0070CD38 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CEE9861F93E18E0070CD38 /* Double+Extension.swift */; };
 		91FFFC681F93621500D58203 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FFFC631F93621400D58203 /* RequestMethod.swift */; };
 		91FFFC691F93621500D58203 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FFFC641F93621500D58203 /* Endpoint.swift */; };
 		91FFFC6A1F93621500D58203 /* RequestEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FFFC651F93621500D58203 /* RequestEncoding.swift */; };
@@ -97,6 +98,7 @@
 		919D7CCA1F9246C20009B18F /* MapPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapPageViewController.xib; sourceTree = "<group>"; };
 		919D7CD01F924B790009B18F /* ConfiguratorError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguratorError.swift; sourceTree = "<group>"; };
 		919D7CD31F9254A90009B18F /* AppMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMain.swift; sourceTree = "<group>"; };
+		91CEE9861F93E18E0070CD38 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		91FFFC631F93621400D58203 /* RequestMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
 		91FFFC641F93621500D58203 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		91FFFC651F93621500D58203 /* RequestEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestEncoding.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 		919D7CAB1F9244FD0009B18F /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				91CEE9851F93E17E0070CD38 /* Extension */,
 				919D7CCF1F924B6B0009B18F /* Errors */,
 				916301CE1F939EBE005C8E83 /* Helpers */,
 				91960E311F92BE5B00B8A152 /* Models */,
@@ -311,6 +314,14 @@
 				91960E2D1F92794500B8A152 /* AppConfig.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		91CEE9851F93E17E0070CD38 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				91CEE9861F93E18E0070CD38 /* Double+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		91FFFC611F935AFA00D58203 /* Networking */ = {
@@ -674,6 +685,7 @@
 				919D7CBB1F9245B20009B18F /* MapPageModule.swift in Sources */,
 				91FFFC731F93633500D58203 /* DriversEndpoint.swift in Sources */,
 				916301D21F93ADC3005C8E83 /* Trigger.swift in Sources */,
+				91CEE9871F93E18E0070CD38 /* Double+Extension.swift in Sources */,
 				91960E2E1F92794500B8A152 /* AppConfig.swift in Sources */,
 				919D7CD41F9254A90009B18F /* AppMain.swift in Sources */,
 				916301CD1F93952A005C8E83 /* MapLocationView.swift in Sources */,
