@@ -15,12 +15,12 @@ class MapPageViewController: UIViewController {
     @IBOutlet weak var shadowView       : UIView!
     @IBOutlet weak var infoLocationView : MapLocationView!
     
-    private var devicePin     : GMSMarker!
-    private var locationPin : GMSMarker!
-    private var drivers     : [GMSMarker] = []
-    private var mapView     : GMSMapView!
+    private var devicePin       : GMSMarker!
+    private var locationPin     : GMSMarker!
+    private var drivers         : [GMSMarker] = []
+    private var mapView         : GMSMapView!
     
-    private var presenter   : MapPageModule?
+    private var presenter       : MapPageModule?
     
     init() {
         let identifier = String(describing: MapPageViewController.self)
@@ -58,7 +58,7 @@ class MapPageViewController: UIViewController {
 
 // MARK: - View Delegate
 extension MapPageViewController : MapPageView {
-    func setPins(drivers: [Driver]) {
+    func showMarkers(drivers: [Driver]) {
         DispatchQueue.main.async { [unowned self] in
             self.cleanDrivers()
             self.showDrivers(drivers)
@@ -77,17 +77,24 @@ extension MapPageViewController : MapPageView {
         }
     }
     
-    func setPin(device coordinate:Coordinate) {
+    func showMarker(device coordinate:Coordinate) {
         assertDependencies()
         DispatchQueue.main.async { [unowned self] in
             self.showUserPin(coordinate: coordinate)
         }
     }
     
-    func setPin(location coordinate:Coordinate) {
+    func showMarker(location coordinate:Coordinate) {
         assertDependencies()
         DispatchQueue.main.async { [unowned self] in
             self.showLocationPin(coordinate: coordinate)
+        }
+    }
+    
+    func showAddress(_ address: Address?) {
+        assertDependencies()
+        DispatchQueue.main.async { [unowned self] in
+            self.infoLocationView.update(address:address)
         }
     }
 }
@@ -95,11 +102,8 @@ extension MapPageViewController : MapPageView {
 // MARK: - Helpers
 extension MapPageViewController {
     func cleanDrivers() {
-        drivers = drivers.map { driver in
-            driver.map = nil
-            return driver
-        }
         drivers.removeAll()
+        mapView.clear()
     }
     
     func showDrivers(_ drivers:[Driver]) {

@@ -24,8 +24,9 @@ class MapLocationView: UIView {
         setup()
     }
     
-    func update() {
-        
+    func update(address:Address?) {
+        self.firstLabel.text    = address?.street
+        self.secondLabel.text   = (address?.region ?? "") + ", " + (address?.city ?? "")
     }
 
     func setup() {

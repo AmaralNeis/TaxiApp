@@ -71,7 +71,7 @@ extension MapPagePresenter : MapPageModule {
 // MARK: - Output Interactor Delegate
 extension MapPagePresenter : MapPageOutput {
     public func fetchAddres(_ address: Address?) {
-        
+        view?.showAddress(address)
     }
     
     public func fetchDrivers(_ drivers: [Driver]) {
@@ -84,12 +84,13 @@ extension MapPagePresenter : MapPageOutput {
             orderedDrivers[0].nearest = true
         }
         
-        view?.setPins(drivers: orderedDrivers)
+        view?.showMarkers(drivers: orderedDrivers)
+        view?.showMarker(device: deviceLocation)
     }
     
     public func fetchUserLocation(coordinate:Coordinate) {
         deviceLocation = coordinate
-        view?.setPin(device: coordinate)
+        view?.showMarker(device: coordinate)
         
         if followUser {
             followUser = false

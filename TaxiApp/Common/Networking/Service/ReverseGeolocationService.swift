@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import GoogleMaps
+import CoreLocation
 
 public struct ReverseGeolocationService : Gettable {
     
@@ -15,18 +15,18 @@ public struct ReverseGeolocationService : Gettable {
     
     public let longitude    : Double
     public let latitude     : Double
-    public let geocoder     : GMSGeocoder
+    public let geocoder     : CLGeocoder
     
     public init(longitude:Double, latitude:Double) {
         self.longitude  = longitude
         self.latitude   = latitude
-        geocoder        = GMSGeocoder()
+        geocoder        = CLGeocoder()
     }
     
     public func get(completion: @escaping (RequestResult<DataType>, [String:Any]) -> Void) {
-        let position = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        let location = CLLocation(latitude: latitude, longitude: longitude)
         
-        geocoder.reverseGeocodeCoordinate(position) { (response, error) in
+        geocoder.reverseGeocodeLocation(location) { placemarks, error in
             if let error = error {
                 let err = error as NSError
                 let result = RequestResult<DataType>.fail(err.code, err)
@@ -34,12 +34,12 @@ public struct ReverseGeolocationService : Gettable {
                 return
             }
             
-            if let gmsAddress = response?.firstResult() {
-                let address = Address(googleAddress: gmsAddress)
+            if let placemark = placemarks?.first {
+                let address = Address(placemark: placemark)
                 completion(RequestResult<DataType>.success(200, address), [:])
                 return
             }
-
+            
             completion(RequestResult<DataType>.success(200, nil), [:])
         }
     }

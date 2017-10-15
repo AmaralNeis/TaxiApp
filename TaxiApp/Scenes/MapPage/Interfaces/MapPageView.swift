@@ -10,8 +10,9 @@ import UIKit
 
 public protocol MapPageView : class {
     func plotNewMap(coordinate:Coordinate, zoom:Double)
+    func showAddress(_ address:Address?)
     func updateMapLocation(coordinate:Coordinate, zoom:Double)
-    func setPin(device coordinate:Coordinate)
-    func setPin(location coordinate:Coordinate)
-    func setPins(drivers: [Driver])
+    func showMarker(device coordinate:Coordinate)
+    func showMarker(location coordinate:Coordinate)
+    func showMarkers(drivers: [Driver])
 }

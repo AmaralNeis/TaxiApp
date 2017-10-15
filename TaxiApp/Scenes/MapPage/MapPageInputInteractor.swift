@@ -26,7 +26,7 @@ public class MapPageInputInteractor : NSObject {
 
 extension MapPageInputInteractor : MapPageInput {
     public func getAddress(at coordinate: Coordinate) {
-        let service = ReverseGeolocationService(longitude: coordinate.longitude, latitude: coordinate.longitude)
+        let service = ReverseGeolocationService(longitude: coordinate.longitude, latitude: coordinate.latitude)
         service.get { [weak self] (result, _) in
             switch(result) {
                 case .success(_, let address):

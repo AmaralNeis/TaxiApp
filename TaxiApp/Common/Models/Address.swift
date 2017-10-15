@@ -7,24 +7,23 @@
 //
 
 import Foundation
-import GoogleMaps
+import CoreLocation
 
 public struct Address : Mappable {
     var street      : String?
+    var region      : String?
+    var city        : String?
+    var province    : String?
     var coordinate  : Coordinate?
     
     public init() {}
-    
-//    enum CodingKeys : String, CodingKey {
-//        case driverName     = "driver-name"
-//        case driverCar      = "driver-car"
-//        case latitude       = "lat"
-//        case longitude      = "lng"
-//    }
 }
 
 extension Address {
-    public init(googleAddress:GMSAddress) {
-       // self.street
+    public init(placemark:CLPlacemark) {
+        self.street     = placemark.name
+        self.region     = placemark.subLocality
+        self.city       = placemark.subLocality
+        self.province   = placemark.locality
     }
 }
