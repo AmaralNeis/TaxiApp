@@ -19,11 +19,9 @@ public class MapPagePresenter : NSObject {
     private(set) public var cameraLocation      : Coordinate = Coordinate(latitude: 0, longitude: 0)
     private(set) public var zoom                : Double = 0.0
     private let defaultZoom                     : Double = 17.0
-    private var trigger                         : Trigger
-        
+    
     public override init() {
         zoom = defaultZoom
-        trigger = Trigger()
         super.init()
     }
     
@@ -38,14 +36,9 @@ public class MapPagePresenter : NSObject {
         assert(interactor != nil, "No interactor defined in presenter")
         assert(router != nil, "No router defined in presenter")
     }
-}
-
-// MARK: - Helper
-extension MapPagePresenter {
-    func setupTrigger() {
-        trigger = Trigger(in: 0.7) { [unowned self] in
-            self.interactor?.getDrivers(at: self.cameraLocation)
-        }
+    
+    deinit {
+        interactor?.stopLocation()
     }
 }
 
@@ -53,7 +46,6 @@ extension MapPagePresenter {
 extension MapPagePresenter : MapPageModule {
     public func start() {
         assertDependencies()
-        setupTrigger()
         view?.plotNewMap(coordinate: deviceLocation, zoom: zoom)
         interactor?.startLocation()
     }
@@ -67,7 +59,8 @@ extension MapPagePresenter : MapPageModule {
     public func getDriverAt(coordinate: Coordinate) {
         assertDependencies()
         cameraLocation = coordinate
-        trigger.execute()
+        self.interactor?.getDrivers(at: cameraLocation)
+        self.interactor?.getAddress(at: cameraLocation)
     }
     
     public func defineZoom(_ zoom: Double) {
@@ -77,6 +70,10 @@ extension MapPagePresenter : MapPageModule {
 
 // MARK: - Output Interactor Delegate
 extension MapPagePresenter : MapPageOutput {
+    public func fetchAddres(_ address: Address?) {
+        
+    }
+    
     public func fetchDrivers(_ drivers: [Driver]) {
         let userLocation = cameraLocation
         var orderedDrivers = drivers.sorted { first, second  in

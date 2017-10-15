@@ -128,7 +128,8 @@ extension MapPageViewController {
     func showLocationPin(coordinate:Coordinate) {
         if self.locationPin == nil { self.locationPin = GMSMarker() }
         self.locationPin.position   = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
-        self.devicePin.map            = self.mapView
+        self.locationPin.icon       = GMSMarker.markerImage(with: .blue)
+        self.devicePin.map          = self.mapView
     }
     
     func setMapLocation(coordinate:Coordinate, zoom:Double) {
@@ -145,8 +146,8 @@ extension MapPageViewController {
 }
 
 // MARK: - MapsView Delegate
-extension MapPageViewController : GMSMapViewDelegate {
-    func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
+extension MapPageViewController : GMSMapViewDelegate {    
+    func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
         print(position.target.latitude, position.target.longitude)
         let coordinate = Coordinate(latitude: position.target.latitude, longitude: position.target.longitude)
         presenter?.getDriverAt(coordinate: coordinate)

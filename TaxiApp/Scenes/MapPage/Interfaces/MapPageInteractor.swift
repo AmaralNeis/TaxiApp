@@ -12,9 +12,11 @@ public protocol MapPageInput : class {
     func startLocation()
     func stopLocation()
     func getDrivers(at coordinate:Coordinate)
+    func getAddress(at coordinate:Coordinate)
 }
 
 public protocol MapPageOutput : class {
     func fetchUserLocation(coordinate:Coordinate)
     func fetchDrivers(_ drivers:[Driver])
+    func fetchAddres(_ address:Address?)
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMaps
+import GooglePlaces
 
 public final class AppMain {
     
@@ -24,6 +25,7 @@ public final class AppMain {
     
     public func initialize() {
         GMSServices.provideAPIKey(AppConfig.googleMapsKey)
+        GMSPlacesClient.provideAPIKey(AppConfig.googlePlacesKey)
     }
     
     private func createStartScreen() -> Bool {

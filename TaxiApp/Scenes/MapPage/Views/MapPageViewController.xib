@@ -84,11 +84,29 @@
                         <outlet property="secondLabel" destination="Vb0-5Z-ivF" id="0j2-sU-UTO"/>
                     </connections>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GCk-rn-Crm">
+                    <rect key="frame" x="167" y="303.5" width="40" height="40"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marker" translatesAutoresizingMaskIntoConstraints="NO" id="8HG-f3-Eau">
+                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="0pg-Ka-cLv"/>
+                        <constraint firstAttribute="height" constant="40" id="BSu-1S-N8X"/>
+                        <constraint firstItem="8HG-f3-Eau" firstAttribute="top" secondItem="GCk-rn-Crm" secondAttribute="top" id="EpI-6g-QqA"/>
+                        <constraint firstItem="8HG-f3-Eau" firstAttribute="leading" secondItem="GCk-rn-Crm" secondAttribute="leading" id="dME-4j-Zz4"/>
+                        <constraint firstAttribute="bottom" secondItem="8HG-f3-Eau" secondAttribute="bottom" id="lV4-Me-FcI"/>
+                        <constraint firstAttribute="trailing" secondItem="8HG-f3-Eau" secondAttribute="trailing" id="t2m-Mx-58I"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="DHw-OR-KIw" firstAttribute="trailing" secondItem="5kg-Cw-ThN" secondAttribute="trailing" constant="-3" id="0Pi-ho-VZy"/>
                 <constraint firstItem="DHw-OR-KIw" firstAttribute="bottom" secondItem="5kg-Cw-ThN" secondAttribute="bottom" constant="-3" id="1fH-tZ-3nU"/>
+                <constraint firstItem="GCk-rn-Crm" firstAttribute="centerY" secondItem="8KK-ry-PVk" secondAttribute="centerY" constant="-20" id="9q3-Ij-GUf"/>
                 <constraint firstItem="8KK-ry-PVk" firstAttribute="leading" secondItem="nDP-90-PLG" secondAttribute="leading" id="Azc-Dd-JPK"/>
                 <constraint firstItem="nDP-90-PLG" firstAttribute="bottom" secondItem="8KK-ry-PVk" secondAttribute="bottom" id="BQP-y1-pgv"/>
                 <constraint firstItem="5kg-Cw-ThN" firstAttribute="top" secondItem="nDP-90-PLG" secondAttribute="top" constant="20" id="D7m-qJ-HH3"/>
@@ -97,10 +115,14 @@
                 <constraint firstItem="nDP-90-PLG" firstAttribute="trailing" secondItem="5kg-Cw-ThN" secondAttribute="trailing" constant="20" id="dsJ-8Q-bS3"/>
                 <constraint firstItem="8KK-ry-PVk" firstAttribute="top" secondItem="nDP-90-PLG" secondAttribute="top" id="fHy-cE-QbR"/>
                 <constraint firstItem="DHw-OR-KIw" firstAttribute="leading" secondItem="5kg-Cw-ThN" secondAttribute="leading" constant="3" id="flH-4O-R2I"/>
+                <constraint firstItem="GCk-rn-Crm" firstAttribute="centerX" secondItem="8KK-ry-PVk" secondAttribute="centerX" id="g5L-1t-8xp"/>
                 <constraint firstItem="DHw-OR-KIw" firstAttribute="top" secondItem="5kg-Cw-ThN" secondAttribute="top" constant="3" id="qx0-RG-Df3"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="nDP-90-PLG"/>
             <point key="canvasLocation" x="52.5" y="-60.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="marker" width="60" height="60"/>
+    </resources>
 </document>
