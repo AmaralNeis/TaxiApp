@@ -1,4 +1,4 @@
 # TaxiApp
 
 ### Instalacão
-Use cocoapods para o processo de montade de ambiente.
+Basta user cocoapods para montar o ambiente.
