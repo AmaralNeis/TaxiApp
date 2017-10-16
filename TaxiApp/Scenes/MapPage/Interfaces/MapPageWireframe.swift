@@ -9,5 +9,5 @@
 import UIKit
 
 public protocol MapPageWireframe : class {
-    func gotoSomeplace()
+    func gotoSearch()
 }

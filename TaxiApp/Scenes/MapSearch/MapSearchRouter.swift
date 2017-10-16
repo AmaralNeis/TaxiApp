@@ -1,14 +1,14 @@
 //
-//  MapPageRouter.swift
+//  MapSearchRouter.swift
 //  TaxiApp
 //
-//  Created by dede.exe on 14/10/17.
+//  Created by dede.exe on 15/10/17.
 //Copyright © 2017 dede.exe. All rights reserved.
 //
 
 import UIKit
 
-public class MapPageRouter {
+public class MapSearchRouter {
     
     fileprivate weak var viewController : UIViewController?
     
@@ -21,14 +21,16 @@ public class MapPageRouter {
     fileprivate func assertDependencies() {
         assert(viewController != nil, "ViewController was not set to the Router")
     }
+    
+    public func gotoInsideApplication() {
+        assertDependencies()
+    }
+    
 }
 
-// MARK: - Wireframe Delegate
-extension MapPageRouter : MapPageWireframe {
-    public func gotoSearch() {
-        DispatchQueue.main.async {[unowned self] in
-            let destination = MapSearchConfigurator().create()
-            self.viewController?.present(destination, animated: true, completion: nil)
-        }
+//MARK: - Wireframe Delegate
+extension MapSearchRouter : MapSearchWireframe {
+    public func gotoSomeplace() {
+        //Implement the route here
     }
 }

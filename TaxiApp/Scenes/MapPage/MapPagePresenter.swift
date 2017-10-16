@@ -66,6 +66,10 @@ extension MapPagePresenter : MapPageModule {
     public func defineZoom(_ zoom: Double) {
         self.zoom = zoom
     }
+    
+    public func openSearch() {
+        router?.gotoSearch()
+    }
 }
 
 // MARK: - Output Interactor Delegate

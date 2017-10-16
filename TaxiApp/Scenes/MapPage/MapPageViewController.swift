@@ -56,6 +56,11 @@ class MapPageViewController: UIViewController {
         setupInfoLocationView()
         setupLocationButton()
 	}
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        setupShadowView()
+    }
 }
 
 // MARK: - View Delegate
@@ -164,16 +169,18 @@ extension MapPageViewController : GMSMapViewDelegate {
 // MARK: - InfoLocationView Delegate
 extension MapPageViewController : MapLocationViewDelegate {
     func mapLocationViewDidTouchActionButton(view: MapLocationView) {
-        
+        presenter?.openSearch()
     }
 }
 
 // MARK: - Configurations
 extension MapPageViewController {
     func setupShadowView() {
-        shadowView.layer.shadowOffset = CGSize(width: 3, height: 3)
+        shadowView.layer.masksToBounds = false
+        shadowView.layer.shadowOffset = CGSize(width: 1, height: 3)
         shadowView.layer.shadowColor = UIColor.black.cgColor
-        shadowView.layer.shadowRadius = 0.2
+        shadowView.layer.shadowRadius = 0.5
+        shadowView.layer.shadowOpacity = 0.5
     }
     
     func setupInfoLocationView() {

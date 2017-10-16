@@ -13,4 +13,5 @@ public protocol MapPageModule : class {
     func getCurrentLocation()
     func getDriverAt(coordinate:Coordinate)
     func defineZoom(_ zoom:Double)
+    func openSearch()
 }
