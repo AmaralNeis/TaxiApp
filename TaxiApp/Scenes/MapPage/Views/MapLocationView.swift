@@ -25,14 +25,17 @@ class MapLocationView: UIView {
     }
     
     func update(address:Address?) {
-        self.firstLabel.text    = address?.street
-        self.secondLabel.text   = (address?.region ?? "") + ", " + (address?.city ?? "")
+        firstLabel.text    = address?.street
+        secondLabel.text   = (address?.region ?? "") + ", " + (address?.city ?? "")
     }
 
     func setup() {
-        self.layer.cornerRadius = 3.0
-        self.layer.masksToBounds = true
+        layer.cornerRadius = 3.0
+        layer.masksToBounds = true
         locationButton.addTarget(self, action: #selector(actionButton), for: .touchUpInside)
+        locationButton.tintColor = .lightGray
+        locationButton.setTitle(nil, for: UIControlState())
+        locationButton.setImage(IconIdentifier.search.image, for: UIControlState())
         backgroundColor = UIColor.white
     }
     

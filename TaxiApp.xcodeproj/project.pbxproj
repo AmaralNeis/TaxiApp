@@ -18,6 +18,7 @@
 		916301D41F93B67A005C8E83 /* Drivers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916301D31F93B67A005C8E83 /* Drivers.swift */; };
 		917E51B31F940AC500584B85 /* ReverseGeolocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917E51B21F940AC500584B85 /* ReverseGeolocationService.swift */; };
 		917E51B51F940DBA00584B85 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917E51B41F940DBA00584B85 /* Address.swift */; };
+		918F866B1F942FAB003F0473 /* IconIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918F866A1F942FAB003F0473 /* IconIdentifier.swift */; };
 		91960E2E1F92794500B8A152 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91960E2D1F92794500B8A152 /* AppConfig.swift */; };
 		91960E331F92BE7D00B8A152 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91960E321F92BE7D00B8A152 /* Coordinate.swift */; };
 		91960E381F92D1E700B8A152 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91960E371F92D1E700B8A152 /* Driver.swift */; };
@@ -86,6 +87,7 @@
 		916301D31F93B67A005C8E83 /* Drivers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drivers.swift; sourceTree = "<group>"; };
 		917E51B21F940AC500584B85 /* ReverseGeolocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseGeolocationService.swift; sourceTree = "<group>"; };
 		917E51B41F940DBA00584B85 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		918F866A1F942FAB003F0473 /* IconIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconIdentifier.swift; sourceTree = "<group>"; };
 		91960E2D1F92794500B8A152 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		91960E321F92BE7D00B8A152 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		91960E371F92D1E700B8A152 /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
@@ -228,6 +230,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		918F86691F942F82003F0473 /* Enumerations */ = {
+			isa = PBXGroup;
+			children = (
+				918F866A1F942FAB003F0473 /* IconIdentifier.swift */,
+			);
+			path = Enumerations;
+			sourceTree = "<group>";
+		};
 		91960E311F92BE5B00B8A152 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,8 +269,9 @@
 		919D7CAB1F9244FD0009B18F /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				91CEE9851F93E17E0070CD38 /* Extension */,
+				918F86691F942F82003F0473 /* Enumerations */,
 				919D7CCF1F924B6B0009B18F /* Errors */,
+				91CEE9851F93E17E0070CD38 /* Extension */,
 				916301CE1F939EBE005C8E83 /* Helpers */,
 				91960E311F92BE5B00B8A152 /* Models */,
 				91FFFC611F935AFA00D58203 /* Networking */,
@@ -695,6 +706,7 @@
 				91CEE9871F93E18E0070CD38 /* Double+Extension.swift in Sources */,
 				917E51B31F940AC500584B85 /* ReverseGeolocationService.swift in Sources */,
 				917E51B51F940DBA00584B85 /* Address.swift in Sources */,
+				918F866B1F942FAB003F0473 /* IconIdentifier.swift in Sources */,
 				91960E2E1F92794500B8A152 /* AppConfig.swift in Sources */,
 				919D7CD41F9254A90009B18F /* AppMain.swift in Sources */,
 				916301CD1F93952A005C8E83 /* MapLocationView.swift in Sources */,

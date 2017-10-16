@@ -14,6 +14,7 @@ class MapPageViewController: UIViewController {
     @IBOutlet weak var containerMapView : UIView!
     @IBOutlet weak var shadowView       : UIView!
     @IBOutlet weak var infoLocationView : MapLocationView!
+    @IBOutlet weak var locationButton   : UIButton!
     
     private var devicePin       : GMSMarker!
     private var locationPin     : GMSMarker!
@@ -53,6 +54,7 @@ class MapPageViewController: UIViewController {
 	fileprivate func setup() {
         setupShadowView()
         setupInfoLocationView()
+        setupLocationButton()
 	}
 }
 
@@ -162,19 +164,36 @@ extension MapPageViewController : GMSMapViewDelegate {
 // MARK: - InfoLocationView Delegate
 extension MapPageViewController : MapLocationViewDelegate {
     func mapLocationViewDidTouchActionButton(view: MapLocationView) {
-        presenter?.getCurrentLocation()
+        
     }
 }
 
 // MARK: - Configurations
 extension MapPageViewController {
-    
     func setupShadowView() {
         shadowView.layer.shadowOffset = CGSize(width: 3, height: 3)
         shadowView.layer.shadowColor = UIColor.black.cgColor
+        shadowView.layer.shadowRadius = 0.2
     }
     
     func setupInfoLocationView() {
         infoLocationView.delegate = self
+    }
+    
+    func setupLocationButton() {
+        locationButton.setTitle(nil, for: UIControlState())
+        locationButton.backgroundColor = UIColor.white
+        locationButton.layer.cornerRadius = locationButton.bounds.width / 2
+        locationButton.layer.masksToBounds = true
+        locationButton.setImage(IconIdentifier.target.image, for: UIControlState())
+        locationButton.tintColor = .black
+        locationButton.addTarget(self, action: #selector(centerLocation), for: .touchUpInside)
+    }
+}
+
+// MARK: - Actions
+extension MapPageViewController {
+    @objc func centerLocation(sender:UIButton) {
+        presenter?.getCurrentLocation()
     }
 }
