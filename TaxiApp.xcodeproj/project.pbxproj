@@ -16,6 +16,9 @@
 		916301CD1F93952A005C8E83 /* MapLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916301CC1F93952A005C8E83 /* MapLocationView.swift */; };
 		916301D21F93ADC3005C8E83 /* Trigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916301D11F93ADC3005C8E83 /* Trigger.swift */; };
 		916301D41F93B67A005C8E83 /* Drivers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916301D31F93B67A005C8E83 /* Drivers.swift */; };
+		91769A291F94EC4C0043C035 /* HttpStatusCodeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91769A281F94EC4C0043C035 /* HttpStatusCodeTest.swift */; };
+		91769A2C1F94FF210043C035 /* Double+ExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91769A2B1F94FF210043C035 /* Double+ExtensionTest.swift */; };
+		91769A2F1F95006C0043C035 /* DriverTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91769A2E1F95006C0043C035 /* DriverTest.swift */; };
 		917E51B31F940AC500584B85 /* ReverseGeolocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917E51B21F940AC500584B85 /* ReverseGeolocationService.swift */; };
 		917E51B51F940DBA00584B85 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917E51B41F940DBA00584B85 /* Address.swift */; };
 		918F1BDE1F94B39300A2147D /* HttpStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918F1BDD1F94B39300A2147D /* HttpStatusCode.swift */; };
@@ -104,6 +107,10 @@
 		916301CC1F93952A005C8E83 /* MapLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocationView.swift; sourceTree = "<group>"; };
 		916301D11F93ADC3005C8E83 /* Trigger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trigger.swift; sourceTree = "<group>"; };
 		916301D31F93B67A005C8E83 /* Drivers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drivers.swift; sourceTree = "<group>"; };
+		91769A271F94EC4B0043C035 /* TaxiAppTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TaxiAppTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		91769A281F94EC4C0043C035 /* HttpStatusCodeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpStatusCodeTest.swift; sourceTree = "<group>"; };
+		91769A2B1F94FF210043C035 /* Double+ExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+ExtensionTest.swift"; sourceTree = "<group>"; };
+		91769A2E1F95006C0043C035 /* DriverTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverTest.swift; sourceTree = "<group>"; };
 		917E51B21F940AC500584B85 /* ReverseGeolocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseGeolocationService.swift; sourceTree = "<group>"; };
 		917E51B41F940DBA00584B85 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		918F1BDD1F94B39300A2147D /* HttpStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpStatusCode.swift; sourceTree = "<group>"; };
@@ -246,6 +253,8 @@
 		915A012B1F8FAC1B0073838F /* TaxiAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				91769A251F94EC0F0043C035 /* Common */,
+				91769A311F9508FC0043C035 /* Scene */,
 				915A012E1F8FAC1B0073838F /* Info.plist */,
 			);
 			path = TaxiAppTests;
@@ -266,6 +275,48 @@
 				916301D11F93ADC3005C8E83 /* Trigger.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		91769A251F94EC0F0043C035 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				91769A2A1F94FEF20043C035 /* Extension */,
+				91769A261F94EC190043C035 /* Enumerations */,
+				91769A2D1F95004D0043C035 /* Models */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		91769A261F94EC190043C035 /* Enumerations */ = {
+			isa = PBXGroup;
+			children = (
+				91769A281F94EC4C0043C035 /* HttpStatusCodeTest.swift */,
+				91769A271F94EC4B0043C035 /* TaxiAppTests-Bridging-Header.h */,
+			);
+			path = Enumerations;
+			sourceTree = "<group>";
+		};
+		91769A2A1F94FEF20043C035 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				91769A2B1F94FF210043C035 /* Double+ExtensionTest.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		91769A2D1F95004D0043C035 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				91769A2E1F95006C0043C035 /* DriverTest.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		91769A311F9508FC0043C035 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scene;
 			sourceTree = "<group>";
 		};
 		918F86691F942F82003F0473 /* Enumerations */ = {
@@ -563,6 +614,7 @@
 					};
 					915A01271F8FAC1B0073838F = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 915A01131F8FAC1B0073838F;
 					};
@@ -834,6 +886,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91769A2C1F94FF210043C035 /* Double+ExtensionTest.swift in Sources */,
+				91769A291F94EC4C0043C035 /* HttpStatusCodeTest.swift in Sources */,
+				91769A2F1F95006C0043C035 /* DriverTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1019,11 +1074,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SD6HQTT68J;
 				INFOPLIST_FILE = TaxiAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = exe.dede.TaxiAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TaxiAppTests/Common/Enumerations/TaxiAppTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TaxiApp.app/TaxiApp";
@@ -1036,11 +1095,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SD6HQTT68J;
 				INFOPLIST_FILE = TaxiAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = exe.dede.TaxiAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TaxiAppTests/Common/Enumerations/TaxiAppTests-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TaxiApp.app/TaxiApp";
@@ -1053,6 +1115,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SD6HQTT68J;
 				INFOPLIST_FILE = TaxiAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = exe.dede.TaxiAppUITests;
@@ -1069,6 +1132,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SD6HQTT68J;
 				INFOPLIST_FILE = TaxiAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = exe.dede.TaxiAppUITests;
