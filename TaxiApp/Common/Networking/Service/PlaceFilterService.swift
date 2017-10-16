@@ -35,10 +35,15 @@ public struct PlaceFilterService : Gettable {
             if let places = places {
                 var addresses = [Address]()
                 for place in places {
-                    print(place.attributedFullText.string)
+                    let address = Address(prediction: place)
+                    addresses.append(address)
                 }
+                
+                completion(RequestResult<DataType>.success(200, addresses), [:])
+                return
             }
             
+            completion(RequestResult<DataType>.success(200, []), [:])
         }
     }
 }

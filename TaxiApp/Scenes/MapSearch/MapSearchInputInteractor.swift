@@ -34,7 +34,6 @@ public class MapSearchInputInteractor : MapSearchInput {
     }
 }
 
-
 extension MapSearchInputInteractor {
     func handleResult(addresses:[Address]) {
         output?.fetch(addressess: addresses)

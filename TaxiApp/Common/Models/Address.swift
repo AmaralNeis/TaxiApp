@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreLocation
+import GooglePlaces
 
 public struct Address : Mappable {
     var street      : String?
@@ -17,6 +18,7 @@ public struct Address : Mappable {
     var coordinate  : Coordinate?
     
     public init() {}
+    
 }
 
 extension Address {
@@ -25,5 +27,10 @@ extension Address {
         self.region     = placemark.subLocality
         self.city       = placemark.subLocality
         self.province   = placemark.locality
+    }
+    
+    public init(prediction: GMSAutocompletePrediction) {
+        self.street     = prediction.attributedPrimaryText.string
+        self.city       = prediction.attributedSecondaryText?.string
     }
 }

@@ -9,5 +9,6 @@
 import UIKit
 
 public protocol MapSearchView : class {
-    func show(something:String)
+    func show(addresses:[Address])
+    func eraseSearch()
 }

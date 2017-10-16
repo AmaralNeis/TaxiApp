@@ -28,7 +28,8 @@ extension MapPageRouter : MapPageWireframe {
     public func gotoSearch() {
         DispatchQueue.main.async {[unowned self] in
             let destination = MapSearchConfigurator().create()
-            self.viewController?.present(destination, animated: true, completion: nil)
+            destination.modalPresentationStyle = .overCurrentContext
+            self.viewController?.present(destination, animated: false, completion: nil)
         }
     }
 }

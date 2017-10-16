@@ -30,7 +30,7 @@ public class MapSearchRouter {
 
 //MARK: - Wireframe Delegate
 extension MapSearchRouter : MapSearchWireframe {
-    public func gotoSomeplace() {
-        //Implement the route here
+    public func close() {
+        viewController?.dismiss(animated: false, completion: nil)
     }
 }

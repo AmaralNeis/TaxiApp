@@ -11,4 +11,5 @@ import Foundation
 public protocol MapSearchModule : class {
     func search(address:String?)
     func backToMap()
+    func resetSearch()
 }

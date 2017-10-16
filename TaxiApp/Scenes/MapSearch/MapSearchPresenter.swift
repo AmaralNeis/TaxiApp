@@ -39,6 +39,7 @@ public class MapSearchPresenter {
 extension MapSearchPresenter : MapSearchModule {
     public func backToMap() {
         self.assertDependencies()
+        router?.close()
     }
     
     public func search(address: String?) {
@@ -46,15 +47,21 @@ extension MapSearchPresenter : MapSearchModule {
         self.searchText = address
         trigger?.execute()
     }
+    
+    public func resetSearch() {
+        searchText = ""
+        view?.show(addresses: [])
+        view?.eraseSearch()
+    }
 }
 
 //MARK: - Output Interactor Delegate
 extension MapSearchPresenter : MapSearchOutput {
     public func fetch(addressess: [Address]) {
         assertDependencies()
+        view?.show(addresses: addressess)
     }
 }
-
 
 //MARK: - Configurations
 extension MapSearchPresenter {

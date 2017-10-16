@@ -51,6 +51,10 @@ class MapSearchAddressView: UIView {
     func getFocus() {
         textField.becomeFirstResponder()
     }
+    
+    func eraseSearch() {
+        textField.text = ""
+    }
 }
 
 // MARK: - Configurations
@@ -59,14 +63,14 @@ extension MapSearchAddressView {
         leftButton.addTarget(self, action: #selector(actionButton), for: .touchUpInside)
         leftButton.tintColor = .lightGray
         leftButton.setTitle(nil, for: UIControlState())
-        leftButton.setImage(IconIdentifier.search.image, for: UIControlState())
+        leftButton.setImage(IconIdentifier.chevronLeft.image, for: UIControlState())
     }
     
     func setupRightButton() {
         rightButton.addTarget(self, action: #selector(actionButton), for: .touchUpInside)
         rightButton.tintColor = .lightGray
         rightButton.setTitle(nil, for: UIControlState())
-        rightButton.setImage(IconIdentifier.search.image, for: UIControlState())
+        rightButton.setImage(IconIdentifier.close.image, for: UIControlState())
     }
     
     func setupTextField() {

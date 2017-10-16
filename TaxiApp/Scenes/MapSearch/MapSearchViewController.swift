@@ -16,7 +16,8 @@ class MapSearchViewController: UIViewController {
     @IBOutlet weak var containerTableView   : UIView!
     @IBOutlet weak var tableView            : UITableView!
     
-    fileprivate var presenter : MapSearchModule?
+    fileprivate var presenter   : MapSearchModule?
+    var tableHandler            : MapSearchTableHandler = MapSearchTableHandler()
     
     init() {
         let identifier = String(describing: MapSearchViewController.self)
@@ -56,19 +57,30 @@ class MapSearchViewController: UIViewController {
 
 // MARK: - View Delegate
 extension MapSearchViewController : MapSearchView {
-    func show(something: String) {
-        //Implement what to show here
+    func show(addresses: [Address]) {
+        tableHandler.addresses = addresses
     }
 }
 
 // MARK: - View Delegate
 extension MapSearchViewController : MapSearchAddressViewDelegate {
     func mapSearchAddressView(view: MapSearchAddressView, didTouch actionButton: MapSearchAddressViewButton) {
+        if actionButton == .back {
+            presenter?.backToMap()
+            return
+        }
         
+        presenter?.resetSearch()
     }
     
     func mapSearchAddressView(view: MapSearchAddressView, didUpdate text: String?) {
         presenter?.search(address: text)
+    }
+    
+    func eraseSearch() {
+        DispatchQueue.main.async { [weak self] in
+            self?.infoLocationView.eraseSearch()
+        }
     }
 }
 
@@ -88,7 +100,7 @@ extension MapSearchViewController {
     }
     
     func setupView() {
-        view.backgroundColor = UIColor.lightGray
+        view.backgroundColor = UIColor.lightGray.withAlphaComponent(0.6)
         containerMapView.backgroundColor = .clear
         containerTableView.backgroundColor = .clear
         containerTableView.layer.cornerRadius = 3.0
@@ -98,5 +110,12 @@ extension MapSearchViewController {
     func setupTableView() {
         tableView.separatorStyle = .none
         tableView.keyboardDismissMode = .onDrag
+        tableView.dataSource = tableHandler
+        tableView.delegate = tableHandler
     }
+}
+
+// MARK: - Animations
+extension MapSearchViewController {
+    
 }
