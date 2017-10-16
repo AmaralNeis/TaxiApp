@@ -9,12 +9,14 @@
 import UIKit
 
 public enum IconIdentifier : String {
-    case target         = "target"
-    case marker         = "marker"
-    case search         = "search"
-    case place          = "place"
-    case chevronLeft    = "chevronleft"
-    case close          = "close"
+    case target             = "target"
+    case marker             = "marker"
+    case search             = "search"
+    case place              = "place"
+    case chevronLeft        = "chevronleft"
+    case close              = "close"
+    case taximarker         = "taximarker"
+    case nearesttaximarker  = "nearesttaximarker"
 }
 
 extension IconIdentifier {

@@ -118,10 +118,10 @@ extension MapPageViewController {
             guard let latitude = driver.latitude, let longitude = driver.longitude else { continue }
             let position = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
             let newDriver = GMSMarker(position: position)
-            newDriver.icon = GMSMarker.markerImage(with: .black)
+            newDriver.icon = IconIdentifier.taximarker.image
             
             if index == 0 {
-                newDriver.icon = GMSMarker.markerImage(with: .yellow)
+                newDriver.icon = IconIdentifier.nearesttaximarker.image
             }
             
             newDriver.map = self.mapView
