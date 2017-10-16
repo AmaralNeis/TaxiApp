@@ -10,12 +10,13 @@ import Foundation
 
 public class MapSearchPresenter {
     
-    fileprivate weak var view   : MapSearchView?
-    fileprivate var interactor  : MapSearchInput?
-    fileprivate var router      : MapSearchWireframe?
+    fileprivate weak var view       : MapSearchView?
+    fileprivate var interactor      : MapSearchInput?
+    fileprivate var router          : MapSearchWireframe?
     
-    private var searchText      : String?
-    private var trigger         : Trigger?
+    private var searchText          : String?
+    private var trigger             : Trigger?
+    private var updatableDelegate   : Updatable?
     
     public init() {
         setupTrigger()
@@ -25,6 +26,10 @@ public class MapSearchPresenter {
         self.view = view
         self.interactor = interactor
         self.router = router
+    }
+    
+    public func inject(updatable:Updatable?) {
+        self.updatableDelegate = updatable
     }
     
     fileprivate func assertDependencies() {
@@ -48,6 +53,11 @@ extension MapSearchPresenter : MapSearchModule {
         trigger?.execute()
     }
     
+    public func searchDetail(of address: Address) {
+        self.assertDependencies()
+        interactor?.searchDetails(of: address)
+    }
+    
     public func resetSearch() {
         searchText = ""
         view?.show(addresses: [])
@@ -60,6 +70,12 @@ extension MapSearchPresenter : MapSearchOutput {
     public func fetch(addressess: [Address]) {
         assertDependencies()
         view?.show(addresses: addressess)
+    }
+    
+    public func fetch(address: Address) {
+        assertDependencies()
+        updatableDelegate?.update(with: ["coordinate" : address.coordinate as Any])
+        router?.close()
     }
 }
 

@@ -68,7 +68,7 @@ extension MapPagePresenter : MapPageModule {
     }
     
     public func openSearch() {
-        router?.gotoSearch()
+        router?.gotoSearch(updating: self)
     }
 }
 
@@ -103,3 +103,10 @@ extension MapPagePresenter : MapPageOutput {
     }
 }
 
+// MARK: - Updatable Delegate
+extension MapPagePresenter : Updatable {
+    public func update(with info: [String : Any]?) {
+        guard let coordinate = info?["coordinate"] as? Coordinate else { return }
+        view?.updateMapLocation(coordinate: coordinate, zoom: defaultZoom)
+    }
+}

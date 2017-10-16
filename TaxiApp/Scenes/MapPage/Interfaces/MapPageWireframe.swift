@@ -9,5 +9,5 @@
 import UIKit
 
 public protocol MapPageWireframe : class {
-    func gotoSearch()
+    func gotoSearch(updating updatable:Updatable?)
 }

@@ -26,9 +26,24 @@ public class MapSearchInputInteractor : MapSearchInput {
         let service = PlaceFilterService(place: address)
         service.get { [weak self] result, headers in
             switch result {
-                case .fail: break
+                case .fail:
+                    break
                 case .success(_, let addresses):
                     self?.handleResult(addresses: addresses)
+            }
+        }
+    }
+    
+    public func searchDetails(of address: Address) {
+        guard let placeId = address.id else { return }
+        
+        let service = PlaceDetailService(place: placeId)
+        service.get { [weak self] result, headers in
+            switch result {
+                case .fail:
+                    break
+                case .success(_, let address):
+                    self?.handleResult(address: address)
             }
         }
     }
@@ -37,5 +52,9 @@ public class MapSearchInputInteractor : MapSearchInput {
 extension MapSearchInputInteractor {
     func handleResult(addresses:[Address]) {
         output?.fetch(addressess: addresses)
+    }
+    
+    func handleResult(address:Address) {
+        output?.fetch(address: address)
     }
 }

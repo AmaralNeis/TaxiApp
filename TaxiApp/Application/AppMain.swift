@@ -25,7 +25,7 @@ public final class AppMain {
     
     public func initialize() {
         GMSServices.provideAPIKey(AppConfig.googleMapsKey)
-        GMSPlacesClient.provideAPIKey(AppConfig.googlePlacesKey)
+        GMSPlacesClient.provideAPIKey(AppConfig.googleMapsKey)
     }
     
     private func createStartScreen() -> Bool {

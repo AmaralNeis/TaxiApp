@@ -36,11 +36,11 @@ public struct ReverseGeolocationService : Gettable {
             
             if let placemark = placemarks?.first {
                 let address = Address(placemark: placemark)
-                completion(RequestResult<DataType>.success(200, address), [:])
+                completion(RequestResult<DataType>.success(HttpStatusCode.ok.rawValue, address), [:])
                 return
             }
             
-            completion(RequestResult<DataType>.success(200, nil), [:])
+            completion(RequestResult<DataType>.success(HttpStatusCode.ok.rawValue, nil), [:])
         }
     }
 }

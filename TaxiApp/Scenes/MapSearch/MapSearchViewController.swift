@@ -84,7 +84,6 @@ extension MapSearchViewController : MapSearchAddressViewDelegate {
     }
 }
 
-
 // MARK: - Configurations
 extension MapSearchViewController {
     func setupShadowView() {
@@ -100,7 +99,7 @@ extension MapSearchViewController {
     }
     
     func setupView() {
-        view.backgroundColor = UIColor.lightGray.withAlphaComponent(0.6)
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         containerMapView.backgroundColor = .clear
         containerTableView.backgroundColor = .clear
         containerTableView.layer.cornerRadius = 3.0
@@ -108,10 +107,17 @@ extension MapSearchViewController {
     }
     
     func setupTableView() {
+        tableHandler.delegate = self
         tableView.separatorStyle = .none
         tableView.keyboardDismissMode = .onDrag
         tableView.dataSource = tableHandler
         tableView.delegate = tableHandler
+    }
+}
+
+extension MapSearchViewController : MapSearchTableHandlerDelegate {
+    func mapSearchTableHandler(tableHandler: MapSearchTableHandler, didSelect address: Address) {
+        presenter?.searchDetail(of: address)
     }
 }
 

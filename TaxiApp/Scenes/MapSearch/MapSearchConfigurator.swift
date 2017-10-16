@@ -12,13 +12,14 @@ public class MapSearchConfigurator {
     
     public init() {}
     
-    func create() -> MapSearchViewController {
+    func create(updating updatable:Updatable?) -> MapSearchViewController {
         let viewController = MapSearchViewController()
         let presenter = MapSearchPresenter()
         let router = MapSearchRouter()
         let interactor = MapSearchInputInteractor()
         
         presenter.inject(view: viewController, interactor: interactor, router: router)
+        presenter.inject(updatable: updatable)
         interactor.inject(output: presenter)
         viewController.inject(presenter: presenter)
         router.inject(viewController: viewController)

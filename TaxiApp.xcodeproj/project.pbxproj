@@ -18,6 +18,9 @@
 		916301D41F93B67A005C8E83 /* Drivers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916301D31F93B67A005C8E83 /* Drivers.swift */; };
 		917E51B31F940AC500584B85 /* ReverseGeolocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917E51B21F940AC500584B85 /* ReverseGeolocationService.swift */; };
 		917E51B51F940DBA00584B85 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917E51B41F940DBA00584B85 /* Address.swift */; };
+		918F1BDE1F94B39300A2147D /* HttpStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918F1BDD1F94B39300A2147D /* HttpStatusCode.swift */; };
+		918F1BE01F94B46600A2147D /* PlaceDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918F1BDF1F94B46600A2147D /* PlaceDetailService.swift */; };
+		918F1BE21F94B90300A2147D /* Updatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918F1BE11F94B90300A2147D /* Updatable.swift */; };
 		918F866B1F942FAB003F0473 /* IconIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918F866A1F942FAB003F0473 /* IconIdentifier.swift */; };
 		918F86721F943CB3003F0473 /* MapSearchModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918F866E1F943CB3003F0473 /* MapSearchModule.swift */; };
 		918F86731F943CB3003F0473 /* MapSearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918F866F1F943CB3003F0473 /* MapSearchInteractor.swift */; };
@@ -103,6 +106,9 @@
 		916301D31F93B67A005C8E83 /* Drivers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drivers.swift; sourceTree = "<group>"; };
 		917E51B21F940AC500584B85 /* ReverseGeolocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseGeolocationService.swift; sourceTree = "<group>"; };
 		917E51B41F940DBA00584B85 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		918F1BDD1F94B39300A2147D /* HttpStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpStatusCode.swift; sourceTree = "<group>"; };
+		918F1BDF1F94B46600A2147D /* PlaceDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailService.swift; sourceTree = "<group>"; };
+		918F1BE11F94B90300A2147D /* Updatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Updatable.swift; sourceTree = "<group>"; };
 		918F866A1F942FAB003F0473 /* IconIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconIdentifier.swift; sourceTree = "<group>"; };
 		918F866E1F943CB3003F0473 /* MapSearchModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchModule.swift; sourceTree = "<group>"; };
 		918F866F1F943CB3003F0473 /* MapSearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchInteractor.swift; sourceTree = "<group>"; };
@@ -266,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				918F866A1F942FAB003F0473 /* IconIdentifier.swift */,
+				918F1BDD1F94B39300A2147D /* HttpStatusCode.swift */,
 			);
 			path = Enumerations;
 			sourceTree = "<group>";
@@ -322,6 +329,7 @@
 			children = (
 				91FFFC761F936A3700D58203 /* Gettable.swift */,
 				91960E401F92D41800B8A152 /* Mappable.swift */,
+				918F1BE11F94B90300A2147D /* Updatable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -464,6 +472,7 @@
 				91FFFC741F936A1800D58203 /* DriversService.swift */,
 				917E51B21F940AC500584B85 /* ReverseGeolocationService.swift */,
 				91EAAA621F945A2300D44970 /* PlaceFilterService.swift */,
+				918F1BDF1F94B46600A2147D /* PlaceDetailService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -777,6 +786,7 @@
 				919D7CC41F9245C10009B18F /* MapPagePresenter.swift in Sources */,
 				919D7CC51F9245C10009B18F /* MapPageRouter.swift in Sources */,
 				919D7CBC1F9245B20009B18F /* MapPageInteractor.swift in Sources */,
+				918F1BE21F94B90300A2147D /* Updatable.swift in Sources */,
 				919D7CC71F9245C10009B18F /* MapPageInputInteractor.swift in Sources */,
 				91FFFC681F93621500D58203 /* RequestMethod.swift in Sources */,
 				91FFFC6E1F93624800D58203 /* Dictionary+UrlEncoder.swift in Sources */,
@@ -784,6 +794,7 @@
 				918F86721F943CB3003F0473 /* MapSearchModule.swift in Sources */,
 				916301D41F93B67A005C8E83 /* Drivers.swift in Sources */,
 				91FFFC6C1F93621500D58203 /* WebService.swift in Sources */,
+				918F1BDE1F94B39300A2147D /* HttpStatusCode.swift in Sources */,
 				915A01181F8FAC1B0073838F /* AppDelegate.swift in Sources */,
 				91FFFC6B1F93621500D58203 /* RequestResult.swift in Sources */,
 				919D7CBD1F9245B20009B18F /* MapPageView.swift in Sources */,
@@ -796,6 +807,7 @@
 				918F86731F943CB3003F0473 /* MapSearchInteractor.swift in Sources */,
 				91960E411F92D41800B8A152 /* Mappable.swift in Sources */,
 				918F867C1F943CD0003F0473 /* MapSearchRouter.swift in Sources */,
+				918F1BE01F94B46600A2147D /* PlaceDetailService.swift in Sources */,
 				919D7CBB1F9245B20009B18F /* MapPageModule.swift in Sources */,
 				91FFFC731F93633500D58203 /* DriversEndpoint.swift in Sources */,
 				91EAAA6F1F94692800D44970 /* TableView+Utils.swift in Sources */,

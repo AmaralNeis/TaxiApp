@@ -25,9 +25,9 @@ public class MapPageRouter {
 
 // MARK: - Wireframe Delegate
 extension MapPageRouter : MapPageWireframe {
-    public func gotoSearch() {
+    public func gotoSearch(updating updatable:Updatable?) {
         DispatchQueue.main.async {[unowned self] in
-            let destination = MapSearchConfigurator().create()
+            let destination = MapSearchConfigurator().create(updating: updatable)
             destination.modalPresentationStyle = .overCurrentContext
             self.viewController?.present(destination, animated: false, completion: nil)
         }

@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol MapSearchTableHandlerDelegate : class {
+    func mapSearchTableHandler(tableHandler:MapSearchTableHandler, didSelect address:Address)
+}
+
 class MapSearchTableHandler : NSObject {
     
     public var addresses: [Address] = [] {
@@ -15,6 +19,7 @@ class MapSearchTableHandler : NSObject {
     }
     
     private weak var tableView : UITableView?
+    weak var delegate : MapSearchTableHandlerDelegate?
     
     override init() {
         super.init()
@@ -61,6 +66,11 @@ extension MapSearchTableHandler : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let address = addresses[indexPath.row]
+        delegate?.mapSearchTableHandler(tableHandler: self, didSelect: address)
     }
 }
 

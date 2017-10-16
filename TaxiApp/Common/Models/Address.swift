@@ -11,6 +11,7 @@ import CoreLocation
 import GooglePlaces
 
 public struct Address : Mappable {
+    var id          : String?
     var street      : String?
     var region      : String?
     var city        : String?
@@ -30,7 +31,14 @@ extension Address {
     }
     
     public init(prediction: GMSAutocompletePrediction) {
+        self.id         = prediction.placeID
         self.street     = prediction.attributedPrimaryText.string
         self.city       = prediction.attributedSecondaryText?.string
+    }
+    
+    public init(gmsPlace:GMSPlace) {
+        self.id = gmsPlace.placeID
+        self.street = gmsPlace.name
+        self.coordinate = Coordinate(coordinate: gmsPlace.coordinate)
     }
 }

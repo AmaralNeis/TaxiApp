@@ -10,8 +10,10 @@ import Foundation
 
 public protocol MapSearchInput : class {
     func search(address:String)
+    func searchDetails(of address:Address)
 }
 
 public protocol MapSearchOutput : class {
     func fetch(addressess:[Address])
+    func fetch(address:Address)
 }

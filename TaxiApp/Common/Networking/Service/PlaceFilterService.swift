@@ -39,11 +39,11 @@ public struct PlaceFilterService : Gettable {
                     addresses.append(address)
                 }
                 
-                completion(RequestResult<DataType>.success(200, addresses), [:])
+                completion(RequestResult<DataType>.success(HttpStatusCode.ok.rawValue, addresses), [:])
                 return
             }
             
-            completion(RequestResult<DataType>.success(200, []), [:])
+            completion(RequestResult<DataType>.success(HttpStatusCode.ok.rawValue, []), [:])
         }
     }
 }

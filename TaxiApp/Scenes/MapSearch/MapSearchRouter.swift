@@ -31,6 +31,8 @@ public class MapSearchRouter {
 //MARK: - Wireframe Delegate
 extension MapSearchRouter : MapSearchWireframe {
     public func close() {
-        viewController?.dismiss(animated: false, completion: nil)
+        DispatchQueue.main.async { [weak self] in
+            self?.viewController?.dismiss(animated: false, completion: nil)
+        }
     }
 }

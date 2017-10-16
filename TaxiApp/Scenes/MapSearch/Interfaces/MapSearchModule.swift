@@ -10,6 +10,7 @@ import Foundation
 
 public protocol MapSearchModule : class {
     func search(address:String?)
+    func searchDetail(of address:Address)
     func backToMap()
     func resetSearch()
 }
