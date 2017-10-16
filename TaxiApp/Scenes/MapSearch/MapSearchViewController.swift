@@ -32,8 +32,13 @@ class MapSearchViewController: UIViewController {
         super.viewDidLoad()
         assertDependencies()
     	setup()
-        infoLocationView.getFocus()
+        initialState()
 	}
+    
+    override func viewDidAppear(_ animated: Bool) {
+        showBackground()
+        infoLocationView.getFocus()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -123,5 +128,13 @@ extension MapSearchViewController : MapSearchTableHandlerDelegate {
 
 // MARK: - Animations
 extension MapSearchViewController {
+    func initialState() {
+        view.backgroundColor = UIColor.black.withAlphaComponent(0)
+    }
     
+    func showBackground() {
+        UIView.animate(withDuration: 0.4) { [unowned self] in
+            self.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        }
+    }
 }

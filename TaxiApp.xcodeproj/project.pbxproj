@@ -402,9 +402,9 @@
 		919D7CD21F9254750009B18F /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				91960E2D1F92794500B8A152 /* AppConfig.swift */,
 				915A01171F8FAC1B0073838F /* AppDelegate.swift */,
 				919D7CD31F9254A90009B18F /* AppMain.swift */,
-				91960E2D1F92794500B8A152 /* AppConfig.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
